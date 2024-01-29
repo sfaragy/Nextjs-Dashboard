@@ -1,6 +1,6 @@
-# Just practiece brashup playground. I will try to put some notes and comments.
+# Just practice brashup playground. I will try to put some notes and comments.
 
-### Adding Fonts
+## Adding Fonts
 
 ```
 import { Inter, Lusitana } from 'next/font/google';
@@ -13,7 +13,7 @@ export const lusitana = Lusitana({
 });
 ```
 
-### Image component:
+## Image component:
 
 ```
 import Image from 'next/image';
@@ -28,7 +28,7 @@ import Image from 'next/image';
 
 In version 13, Next.js introduced a new App Router built on React Server Components, which supports shared layouts, nested routing, loading states, error handling, and more.
 
-### Difference between app router vs page router
+## Difference between app router vs page router
 
 <table class="s-table">
 <thead>
@@ -77,8 +77,80 @@ In version 13, Next.js introduced a new App Router built on React Server Compone
 </tbody>
 </table>
 
+## Setup DB ----
+
+https://nextjs.org/learn/dashboard-app/setting-up-your-database
+
 ## Next.js App Router Course - Starter
 
 This is the starter template for the Next.js App Router Course. It contains the starting code for the dashboard application.
 
 For more information, see the [course curriculum](https://nextjs.org/learn) on the Next.js Website.
+
+## Things to learn
+
+add a global CSS file
+
+Styling: Tailwind / CSS modules
+
+Conditionally add class names by clsx
+
+Add custom fonts with next/font & optimized
+
+Add images with next/image & optimized
+
+Create routes using file-system routing
+
+Role of folders and files when creating new route segments
+
+Create a nested layout that can be shared between multiple pages
+
+Colocation, partial rendering, and the root layout
+
+Use the next/link & use usePathname() hook
+
+Navigation in Next.js
+
+Vercel account to deploy
+
+Create and link Postgres database
+
+Seed the database
+
+Fetching data: APIs, ORMs, SQL, etc
+
+Server Components to help access back-end resources more securely
+
+Network waterfalls
+
+Implement parallel data fetching using a JavaScript Pattern
+
+Static rendering / to improve application's performance
+
+Dynamic rendering / when to use it
+
+Different approaches to make dynamic pages
+
+Simulate a slow data fetch behaviour
+
+async/await VS useEffect, useState
+
+##### add this piece of code in body tag attribute to avoid tag error
+
+suppressHydrationWarning={true}
+
+## Steps:
+
+npx create-next-app@latest nextjs-dashboard --use-npm --example "https://github.com/vercel/next-learn/tree/main/dashboard/starter-example"
+
+cd nextjs-dashboard
+
+npm i
+
+npm run dev
+
+npm i @vercel/postgres
+
+npm run seed
+
+npm i prisma @prisma/client
