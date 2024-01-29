@@ -4,15 +4,18 @@ import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
 import { lusitana } from '@/app/ui/assets/fonts';
 import CardWrapper from '@/app/ui/dashboard/cards';
 
-
+export const metadata: Metadata = {
+  title: 'Dashboard',
+};
 // import { fetchCardData } from '@/app/lib/data';
 import { Suspense } from 'react';
 import {
-    RevenueChartSkeleton,
-    LatestInvoicesSkeleton,
-    CardsSkeleton,
-  } from '@/app/ui/skeletons';
- 
+  RevenueChartSkeleton,
+  LatestInvoicesSkeleton,
+  CardsSkeleton,
+} from '@/app/ui/skeletons';
+import { Metadata } from 'next';
+
 export default async function Page() {
   // const revenue = await fetchRevenue();
   // const latestInvoices = await fetchLatestInvoices();
@@ -23,7 +26,6 @@ export default async function Page() {
   //   totalPendingInvoices,
   // } = await fetchCardData();
 
- 
   return (
     <main>
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
@@ -34,14 +36,13 @@ export default async function Page() {
         <Card title="Pending" value={totalPendingInvoices} type="pending" />
         <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
         <Card title="Total Customers" value={numberOfCustomers} type="customers" /> */}
-         <Suspense fallback={<CardsSkeleton />}>
+        <Suspense fallback={<CardsSkeleton />}>
           <CardWrapper />
         </Suspense>
-
       </div>
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
         {/* <RevenueChart revenue={revenue}  /> */}
-         <Suspense fallback={<RevenueChartSkeleton />}>
+        <Suspense fallback={<RevenueChartSkeleton />}>
           <RevenueChart />
         </Suspense>
         <Suspense fallback={<LatestInvoicesSkeleton />}>
